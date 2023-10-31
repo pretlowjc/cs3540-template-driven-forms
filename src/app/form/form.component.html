@@ -1,0 +1,39 @@
+<h1>Star Wars Character Creation</h1>
+<form (ngSubmit)="onSubmit()" #characterCreation="ngForm">
+    <div class="form-group ng-valid">
+        <label for="name">Name: </label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+    </div>
+    <br>
+    <div class="form-control">
+        <label for="weapon">Weapon: </label>
+        <div *ngFor="let w of weapon">
+            <label>
+                <input type="radio" [value]="w" [(ngModel)]="model.weapon" name="weapon">
+                {{ w }}
+            </label>
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="race">Race: </label>
+        <select class="form-control" id="race" required [(ngModel)]="model.race" name="race">
+            <option *ngFor="let r of race" [value]="r">{{r}}</option>
+        </select>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="background">Background: </label>
+        <div *ngFor="let b of background">
+            <label>
+                <input type="radio" [value]="b" [(ngModel)]="model.background" name="background">
+                {{ b }}
+            </label>
+        </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-success" [disabled]="!characterCreation.form.valid">Submit</button>
+</form>
+<br><br>
+
+{{ model | json }}
