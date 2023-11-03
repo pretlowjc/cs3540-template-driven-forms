@@ -1,15 +1,18 @@
 <h1>Star Wars Character Creation</h1>
-<form (ngSubmit)="onSubmit()" #characterCreation="ngForm">
+<form (ngSubmit)="onSubmit(characterCreation)" #characterCreation="ngForm">
+
+
+
     <div class="form-group ng-valid">
         <label for="name">Name: </label>
-        <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+        <input type="text" id="name" name="name" ngModel required>
     </div>
     <br>
-    <div class="form-control">
+    <div class="form-group">
         <label for="weapon">Weapon: </label>
         <div *ngFor="let w of weapon">
             <label>
-                <input type="radio" [value]="w" [(ngModel)]="model.weapon" name="weapon">
+                <input type="radio" [value]="w" name="weapon" ngModel>
                 {{ w }}
             </label>
         </div>
@@ -17,7 +20,7 @@
     <br>
     <div class="form-group">
         <label for="race">Race: </label>
-        <select class="form-control" id="race" required [(ngModel)]="model.race" name="race">
+        <select id="race" name="race" ngModel required>
             <option *ngFor="let r of race" [value]="r">{{r}}</option>
         </select>
     </div>
@@ -26,7 +29,7 @@
         <label for="background">Background: </label>
         <div *ngFor="let b of background">
             <label>
-                <input type="radio" [value]="b" [(ngModel)]="model.background" name="background">
+                <input type="radio" [value]="b" ngModel name="background">
                 {{ b }}
             </label>
         </div>

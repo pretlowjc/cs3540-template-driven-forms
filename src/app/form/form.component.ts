@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Character } from '../character';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -13,8 +15,13 @@ export class FormComponent {
   background = ['Jedi', 'Sith', 'Bounty Hunter', 'Smuggler', 'Trooper'];
 
   submitted = false;
-  onSubmit() {
+
+  constructor(public router: Router) { }
+
+  submittedFormData: Character | null = null;
+  
+  onSubmit(characterCreation: NgForm) {
     this.submitted = true;
-    
+    this.onSubmit(characterCreation.value["background"]);
   }
 }

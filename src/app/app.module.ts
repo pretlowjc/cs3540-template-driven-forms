@@ -12,6 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { AppRoutingModule } from './app-routing.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 
 
@@ -29,7 +31,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserAnimationsModule,
     MatIconModule,
     MatSidenavModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
