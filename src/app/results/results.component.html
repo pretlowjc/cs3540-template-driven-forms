@@ -1,5 +1,18 @@
 <section>
-    <div *ngIf="background">
-        
-    </div>
+    <h2>Characters</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Weapon</th>
+        <th>Race</th>
+        <th>Background</th>
+      </tr>
+      <tr *ngFor="let character of characters">
+        <td>{{ character.name }}</td>
+        <td>{{ character.weapon }}</td>
+        <td>{{ character.race }}</td>
+        <td>{{ character.background }}</td>
+      </tr>
+    </table>
 </section>
+  

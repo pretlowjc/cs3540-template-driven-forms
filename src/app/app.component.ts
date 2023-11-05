@@ -10,4 +10,4 @@ export class AppComponent {
     {name: "Form", link: "form"},
     {name: "Results", link: "results"}
   ]
-}
+ }

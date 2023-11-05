@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Character } from '../character';
-import { Router } from '@angular/router';
+import { CharacterService } from '../characters.service';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -8,20 +8,19 @@ import { NgForm } from '@angular/forms';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
+
 export class FormComponent {
   model = new Character('', '', '', '');
   weapon = ['Lightsaber', 'Blaster Rifle', 'Blaster Pistol', 'Flamethrower', 'Thermal Detonator'];
   race = ['Human', 'Togruta', "Twi'lek", 'Zabrak', 'Mirialan'];
   background = ['Jedi', 'Sith', 'Bounty Hunter', 'Smuggler', 'Trooper'];
 
-  submitted = false;
-
-  constructor(public router: Router) { }
-
-  submittedFormData: Character | null = null;
+  constructor(private characterService: CharacterService) { }
   
   onSubmit(characterCreation: NgForm) {
-    this.submitted = true;
-    this.onSubmit(characterCreation.value["background"]);
+    const { name, weapon, race, background } = characterCreation.value;
+    const newCharacter = new Character(name, weapon, race, background);
+    this.characterService.saveCharacter(newCharacter);
+    characterCreation.resetForm();
   }
 }

@@ -6,12 +6,13 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import { ResultsComponent } from './results/results.component';
 import { CommonModule } from '@angular/common';
+import { AppRoutingModule } from './app-routing.module';
+
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { AppRoutingModule } from './app-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 
@@ -31,8 +32,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     BrowserAnimationsModule,
     MatIconModule,
     MatSidenavModule,
-    AppRoutingModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    AppRoutingModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

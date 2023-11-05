@@ -1,3 +1,12 @@
 .ng-invalid:not(form)  {
     border-left: 5px solid #a94442; /* red */
-  }
+}
+h2 {
+  margin-left: 20px;
+}
+.form-group, .btn {
+  align-items: left;
+  justify-content: left;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
